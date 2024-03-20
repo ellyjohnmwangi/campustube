@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Videos</title>
+</head>
+<body>
+    <h1>View Videos</h1>
+    <ul>
+        {% for video in videos %}
+        <li>
+            <h2>{{ video.title }}</h2>
+            <p>{{ video.description }}</p>
+            <p>Category: {{ video.category }}</p>
+            <video width="320" height="240" controls>
+                <source src="{{ video.file_path }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
